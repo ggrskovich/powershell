@@ -1,4 +1,12 @@
-﻿# Prompt for user credentials
+<# 
+Author: Gregory Grskovich
+Date: May 19, 2023
+Version: 1.0
+Description:    This scrpit is designed to update the app pool identity credentials, site (root web application), child web application, and child virtual directory 'connect as' credentials
+                that match the username provided by the user via get-credential.  The script approaches the operation in a "xml-rewrite" approach where changes to applicationhost.config
+                are set and then the xml file is rewritten.  IISReset is executed at the end, but can be commented out if desired.
+#>
+# Prompt for user credentials
 $credentials = Get-Credential
 
 # Specify the path to the applicationHost.config file
